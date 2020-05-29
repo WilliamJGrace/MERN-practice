@@ -13,7 +13,7 @@ createMovie = (req, res) => {
     const movie = new Movie(body)
 
     if (!movie) {
-        return res.status(400).json({success: false, error: err})
+        return res.status(400).json({ success: false, error: err })
     }
 
     movie
@@ -31,7 +31,6 @@ createMovie = (req, res) => {
                 message: 'Movie not created!',
             })
         })
-
 }
 updateMovie = async (req, res) => {
     const body = req.body
@@ -101,6 +100,7 @@ getMovieById = async (req, res) => {
         return res.status(200).json({ success: true, data: movie })
     }).catch(err => console.log(err))
 }
+
 getMovies = async (req, res) => {
     await Movie.find({}, (err, movies) => {
         if (err) {
