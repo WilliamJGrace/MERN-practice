@@ -32,6 +32,7 @@ createMovie = (req, res) => {
             })
         })
 }
+
 updateMovie = async (req, res) => {
     const body = req.body
 
